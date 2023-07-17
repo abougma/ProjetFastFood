@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Fast Food{{ parent() }}{% endblock %}
+
+{% block body %}
+    <h1>Menus</h1>
+    <hr>
+    <div class="row">
+        {% for menu in menus %}
+            <div class="col-3 mb-4">
+                <div class="card">
+                    <img src="{{ asset(menu.photo) }}" class="card-img-top" alt="" style=" 'filter: grayscale(100%);' }}">
+                    <div class="card-body">
+                        <h5 class="card-title"></h5>
+                        <p class="card-text">
+                            <b>Nom </b>:{{ menu.name }}<br>
+                            <b>Prix </b>:{{ menu.price }}
+                            <span style=""></span>
+                            <br>
+                            <span class="text-muted">
+                        </p>
+                        <a class="btn btn-primary">
+                            Voir
+                        </a>
+                        <a class="btn btn-primary">
+                            Ajouter au panier
+                        </a>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
+    </div>
+    <h1>Boissons</h1>
+    <hr>
+    <div class="row">
+    {% for article in articles %}
+        <div class="col-3 mb-4">
+            <div class="card">
+                <img src="{{ asset(article.photo) }}" class="card-img-top" alt="" style=" 'filter: grayscale(100%);' }}">
+                <div class="card-body">
+                    <h5 class="card-title"></h5>
+                    <p class="card-text">
+                        <b>Nom </b>:{{ article.name }}<br>
+                        <b>Prix </b>:{{ article.price }}
+                        <span style=""></span>
+                        <br>
+                        <span class="text-muted">
+                    </p>
+                    <a class="btn btn-primary">
+                        Voir
+                    </a>
+                    <a class="btn btn-primary">
+                        Ajouter au panier
+                    </a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+
+
+{% endblock %}
